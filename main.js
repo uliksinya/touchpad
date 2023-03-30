@@ -12,24 +12,24 @@ const screenHeight = window.innerHeight;
 
 leftBtn.addEventListener("click", () => {
     if(cursorPosX>0) {
-        cursorPosX -= 15; // перемещаем курсор на 5 пикселей вправо влево
+        cursorPosX -= 15;                       // перемещаем курсор на 15 пикселей
         cursor.style.left = cursorPosX + "px"; // задаем новую позицию курсора
     }
 });
 rightBtn.addEventListener("click", () => {
     cursorPosX += 15;
-    cursor.style.left = cursorPosX + "px"; // задаем новую позицию курсора
+    cursor.style.left = cursorPosX + "px";
 
 });
 upBtn.addEventListener("click", () => {
     if(cursorPosY>0) {
         cursorPosY -= 15;
-        cursor.style.top = cursorPosY + "px"; // задаем новую позицию курсора
+        cursor.style.top = cursorPosY + "px";
     }
 });
 downBtn.addEventListener("click", () => {
     cursorPosY += 15;
-    cursor.style.top = cursorPosY + "px"; // задаем новую позицию курсора
+    cursor.style.top = cursorPosY + "px";
 });
 
 /*const button = document.querySelector('.btn');

@@ -25,11 +25,10 @@ body {
     margin-left: auto;
     margin-right: auto;
     background-color: red;
-    border: none; /* Убираем границы */
-    color: white; /* Белый цвет текста */
-    padding: 16px 32px; /* Добавляем отступы для кнопки */
-    text-align: center; /* Выравниваем текст по центру */
-    text-decoration: none; /* Убираем подчеркивание */
-    font-size: 16px; /* Размер шрифта кнопки */
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
     position: relative;
 }
