@@ -1,14 +1,17 @@
-const cursor = document.getElementById("cursor");
+const cursor = document.getElementById("myCursor");
+const button = document.querySelector('.btn');
+
 const leftBtn = document.getElementById("left-btn");
 const rightBtn = document.getElementById("right-btn");
 const upBtn=document.getElementById("up-btn");
 const downBtn=document.getElementById("down-btn");
+const pressBtn=document.getElementById("press");
 
 let cursorPosX = 300; // начальная позиция курсора
 let cursorPosY = 300;
 
-const screenWidth = window.screenWidth;
-const screenHeight = window.innerHeight;
+// const screenWidth = window.screenWidth;
+// const screenHeight = window.innerHeight0;
 
 leftBtn.addEventListener("click", () => {
     if(cursorPosX>0) {
@@ -32,21 +35,7 @@ downBtn.addEventListener("click", () => {
     cursor.style.top = cursorPosY + "px";
 });
 
-/*const button = document.querySelector('.btn');
-
-button.addEventListener('mouseover', function() {
-    // Выполняем нужное действие при наведении картинки на кнопку
-    console.log('Картинка находится над кнопкой!');
-});
-
-const button = document.querySelector('.btn');
-
-button.addEventListener('mouseover', function() {
-    // Выполняем нужное действие при наведении картинки на кнопку
-    console.log('Курсор находится внутри кнопки!');
-});
-
-cursor.addEventListener('mousemove', function(e) {
+/*cursor.addEventListener('mousemove', function(e) {
     // Получаем координаты курсора на изображении
     const x = e.clientX - cursor.getBoundingClientRect().left;
     const y = e.clientY - cursor.getBoundingClientRect().top;
@@ -58,7 +47,37 @@ cursor.addEventListener('mousemove', function(e) {
     // Проверяем, находится ли курсор внутри кнопки
     if (x > 0 && y > 0 && x < width && y < height) {
         // Если да, то вызываем событие наведения на кнопку
-        button.dispatchEvent(new Event('mouseover'));
+        pressBtn.addEventListener('click', () => {
+            window.location.href = 'https://www.udemy.com/';
+        });
     }
 });
  */
+
+cursor.addEventListener("mousemove", function(e) {
+
+});
+
+// Обработчик события для проверки совпадения координат
+function checkIntersection(event) {
+    // Получаем координаты курсора
+    const x =cursorPosX;
+    const y = cursorPosY;
+
+    // Получаем координаты кнопки
+    const buttonRect = button.getBoundingClientRect();
+    const buttonLeft = buttonRect.left;
+    const buttonTop = buttonRect.top;
+    const buttonRight = buttonRect.right;
+    const buttonBottom = buttonRect.bottom;
+
+    // Проверяем, находится ли курсор над кнопкой
+    if (x >= buttonLeft && x <= buttonRight && y >= buttonTop && y <= buttonBottom) {
+        // Вызываем обработчик нажатия на кнопку
+        console.log("Над кнопкой");
+    }
+}
+
+// Добавляем слушатель события на перемещение курсора
+document.addEventListener("mousemove", checkIntersection);
+
